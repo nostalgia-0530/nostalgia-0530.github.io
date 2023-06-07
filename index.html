@@ -1,11 +1,32 @@
 <html>
 <head>
 <script language="javascript">
-function countdown()
+function disptime()
 {
-	
+	var time=new Date();
+	var hour=time.getHours();
+	var minute= time.getMinutes();
+	var second= time.getSeconds();
+	var apm="AM";
+	if(hour>12)
+	{
+	hour-=12;
+	apm="PM";
+	}
+	if(minute<10)
+	minute="0"+minute;
+	if(second<10)
+	second="0"+second;
+	document.myform.myclock.value=hour+":"+minute+":"+second+" "+apm;
+	var myTime= setTimeout("disptime()",1000);
 }
 </script>
+<style type="text/css">
+input{
+	 font-size:50px;
+	 color:#CC0000;
+	 BOEDER-STYLE:NONE}
+</style>
 </head>
 <body bgcolor="#FFCCFF" text="#FF80C0" >
 <h1>欢迎光临~只属于你的生日会！</h1><table width="100%" border="0">
